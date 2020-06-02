@@ -1,5 +1,6 @@
 package br.com.chucknorris.category.di
 
+import br.com.chucknorris.base.di.ActivityScope
 import br.com.chucknorris.base.rx.scheduler.ISchedulerProvider
 import br.com.chucknorris.category.adapter.CategoryAdapter
 import br.com.chucknorris.category.adapter.ICategoryListener
@@ -22,31 +23,31 @@ class CategoryModule(listener: ICategoryListener) {
     private var adapterListener: ICategoryListener = listener
 
     @Provides
-    @CategoryScope
+    @ActivityScope
     fun providesCategoryPresenter(schedulerProvider: ISchedulerProvider, categoryUseCase: GetCategoriesUseCase) : CategoryContract.Presenter {
         return CategoryPresenter(schedulerProvider, categoryUseCase)
     }
 
     @Provides
-    @CategoryScope
+    @ActivityScope
     fun providesGetCategoryUseCase(categoryRepository: ICategoryRepository) : GetCategoriesUseCase {
         return GetCategoriesUseCase(categoryRepository)
     }
 
     @Provides
-    @CategoryScope
+    @ActivityScope
     fun providesCategoriesRepository(categoryRemoteData: ICategoryRemoteData) : ICategoryRepository {
         return CategoryRepository(categoryRemoteData)
     }
 
     @Provides
-    @CategoryScope
+    @ActivityScope
     fun provideCategoryRemoteData(retrofit : Retrofit) : ICategoryRemoteData {
         return CategoryRemoteData(retrofit.create(ICategoryApiClient::class.java))
     }
 
     @Provides
-    @CategoryScope
+    @ActivityScope
     fun provideCategoryAdapter() : CategoryAdapter {
         return CategoryAdapter(adapterListener)
     }
