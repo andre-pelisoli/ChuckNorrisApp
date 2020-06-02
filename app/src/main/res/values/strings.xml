@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Chuck Norris App</string>
+
+    <string name="loading_content_error">Oops! Não conseguimos carregar o conteúdo. \n\n Tente carregar o conteúdo novamente</string>
+    <string name="try_again">Tentar novamente</string>
+    <string name="category_header">Escolha uma categoria de piadas e deixe o restante com Chuck Norris.</string>
+    <string name="category_fragment">category fragment</string>
+    <string name="joke_fragment">Joke Fragment</string>
+    <string name="joke_webview">Veja essa piada no website</string>
+    <string name="categories">Categorias</string>
+    <string name="joke">Piada</string>
+</resources>
