@@ -1,4 +1,4 @@
-package br.com.domain.category.usecase
+package br.com.chucknorris.domain.category.usecase
 
 import br.com.chucknorris.domain.category.ICategoryRepository
 import br.com.chucknorris.domain.category.model.Categories

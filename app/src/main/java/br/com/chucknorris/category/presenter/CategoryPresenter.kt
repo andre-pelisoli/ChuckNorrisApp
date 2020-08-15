@@ -2,7 +2,7 @@ package br.com.chucknorris.category.presenter
 
 import br.com.chucknorris.base.mvp.BasePresenter
 import br.com.chucknorris.base.rx.scheduler.ISchedulerProvider
-import br.com.domain.category.usecase.GetCategoriesUseCase
+import br.com.chucknorris.domain.category.usecase.GetCategoriesUseCase
 
 class CategoryPresenter(val scheduler: ISchedulerProvider, private val loadCategoriesUseCase : GetCategoriesUseCase) : BasePresenter<CategoryContract.View>(), CategoryContract.Presenter {
 

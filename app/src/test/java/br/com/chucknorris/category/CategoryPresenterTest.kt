@@ -4,7 +4,7 @@ import br.com.chucknorris.base.rx.scheduler.AppSchedulerProvider
 import br.com.chucknorris.category.presenter.CategoryContract
 import br.com.chucknorris.category.presenter.CategoryPresenter
 import br.com.chucknorris.domain.category.model.Categories
-import br.com.domain.category.usecase.GetCategoriesUseCase
+import br.com.chucknorris.domain.category.usecase.GetCategoriesUseCase
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.RelaxedMockK

@@ -1,8 +1,7 @@
 package br.com.chucknorris.domain.category
 
-import br.com.chucknorris.domain.category.ICategoryRepository
 import br.com.chucknorris.domain.category.model.Categories
-import br.com.domain.category.usecase.GetCategoriesUseCase
+import br.com.chucknorris.domain.category.usecase.GetCategoriesUseCase
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.RelaxedMockK

@@ -5,7 +5,7 @@ import br.com.chucknorris.joke.presenter.JokeContract
 import br.com.chucknorris.joke.presenter.JokePresenter
 import br.com.chucknorris.data.joke.client.IJokeApiClient
 import br.com.chucknorris.data.joke.remote.IJokeRemoteData
-import br.com.data.joke.remote.JokeRemoteData
+import br.com.chucknorris.data.joke.remote.JokeRemoteData
 import br.com.chucknorris.data.joke.repository.JokeRepository
 import br.com.chucknorris.domain.joke.IJokeRepository
 import br.com.chucknorris.domain.joke.usecase.GetJokeUseCase
