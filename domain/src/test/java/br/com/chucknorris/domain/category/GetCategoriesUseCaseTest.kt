@@ -1,12 +1,11 @@
-package br.com.domain.category
+package br.com.chucknorris.domain.category
 
-import br.com.domain.category.ICategoryRepository
-import br.com.domain.category.model.Categories
+import br.com.chucknorris.domain.category.ICategoryRepository
+import br.com.chucknorris.domain.category.model.Categories
 import br.com.domain.category.usecase.GetCategoriesUseCase
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.RelaxedMockK
-import io.mockk.mockk
 import io.reactivex.rxjava3.core.Single
 import org.junit.Before
 import org.junit.Test

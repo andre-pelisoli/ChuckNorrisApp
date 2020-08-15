@@ -1,6 +1,6 @@
-package br.com.data.joke.remote
+package br.com.chucknorris.data.joke.remote
 
-import br.com.domain.joke.model.Joke
+import br.com.chucknorris.domain.joke.model.Joke
 import io.reactivex.rxjava3.core.Single
 
 interface IJokeRemoteData {

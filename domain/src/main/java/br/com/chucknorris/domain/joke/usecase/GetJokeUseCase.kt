@@ -1,7 +1,7 @@
-package br.com.domain.joke.usecase
+package br.com.chucknorris.domain.joke.usecase
 
-import br.com.domain.joke.IJokeRepository
-import br.com.domain.joke.model.Joke
+import br.com.chucknorris.domain.joke.IJokeRepository
+import br.com.chucknorris.domain.joke.model.Joke
 import io.reactivex.rxjava3.core.Single
 
 class GetJokeUseCase (private val repository: IJokeRepository) {

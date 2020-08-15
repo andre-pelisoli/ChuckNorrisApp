@@ -16,7 +16,7 @@ import br.com.chucknorris.category.presenter.CategoryContract
 import br.com.chucknorris.databinding.CategoryActivityBinding
 import br.com.chucknorris.joke.JokeActivity
 import br.com.chucknorris.network.di.DaggerApiServiceComponent
-import br.com.domain.category.model.Categories
+import br.com.chucknorris.domain.category.model.Categories
 import javax.inject.Inject
 
 class CategoryActivity : AppCompatActivity(), CategoryContract.View, ICategoryListener {

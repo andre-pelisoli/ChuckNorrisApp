@@ -1,7 +1,7 @@
 package br.com.chucknorris.category.presenter
 
 import br.com.chucknorris.base.mvp.BaseMvp
-import br.com.domain.category.model.Categories
+import br.com.chucknorris.domain.category.model.Categories
 
 class CategoryContract {
 

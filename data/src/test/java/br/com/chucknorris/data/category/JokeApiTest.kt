@@ -1,6 +1,6 @@
-package br.com.data.category
+package br.com.chucknorris.data.category
 
-import br.com.data.joke.model.JokeApi
+import br.com.chucknorris.data.joke.model.JokeApi
 import org.junit.Test
 
 class JokeApiTest {

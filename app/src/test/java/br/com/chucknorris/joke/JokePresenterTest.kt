@@ -3,8 +3,8 @@ package br.com.chucknorris.joke
 import br.com.chucknorris.base.rx.scheduler.AppSchedulerProvider
 import br.com.chucknorris.joke.presenter.JokeContract
 import br.com.chucknorris.joke.presenter.JokePresenter
-import br.com.domain.joke.model.Joke
-import br.com.domain.joke.usecase.GetJokeUseCase
+import br.com.chucknorris.domain.joke.model.Joke
+import br.com.chucknorris.domain.joke.usecase.GetJokeUseCase
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.RelaxedMockK

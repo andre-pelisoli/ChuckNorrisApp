@@ -3,12 +3,12 @@ package br.com.chucknorris.joke.di
 import br.com.chucknorris.base.rx.scheduler.ISchedulerProvider
 import br.com.chucknorris.joke.presenter.JokeContract
 import br.com.chucknorris.joke.presenter.JokePresenter
-import br.com.data.joke.client.IJokeApiClient
-import br.com.data.joke.remote.IJokeRemoteData
+import br.com.chucknorris.data.joke.client.IJokeApiClient
+import br.com.chucknorris.data.joke.remote.IJokeRemoteData
 import br.com.data.joke.remote.JokeRemoteData
-import br.com.data.joke.repository.JokeRepository
-import br.com.domain.joke.IJokeRepository
-import br.com.domain.joke.usecase.GetJokeUseCase
+import br.com.chucknorris.data.joke.repository.JokeRepository
+import br.com.chucknorris.domain.joke.IJokeRepository
+import br.com.chucknorris.domain.joke.usecase.GetJokeUseCase
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit

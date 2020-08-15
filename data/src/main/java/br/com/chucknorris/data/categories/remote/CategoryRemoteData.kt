@@ -1,7 +1,8 @@
 package br.com.data.categories.remote
 
-import br.com.data.categories.client.ICategoryApiClient
-import br.com.domain.category.model.Categories
+import br.com.chucknorris.data.categories.remote.ICategoryRemoteData
+import br.com.chucknorris.data.categories.client.ICategoryApiClient
+import br.com.chucknorris.domain.category.model.Categories
 import io.reactivex.rxjava3.core.Single
 
 class CategoryRemoteData(private val apiClient : ICategoryApiClient) : ICategoryRemoteData {

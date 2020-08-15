@@ -1,7 +1,7 @@
-package br.com.domain.joke
+package br.com.chucknorris.domain.joke
 
-import br.com.domain.joke.model.Joke
-import br.com.domain.joke.usecase.GetJokeUseCase
+import br.com.chucknorris.domain.joke.model.Joke
+import br.com.chucknorris.domain.joke.usecase.GetJokeUseCase
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.RelaxedMockK

@@ -1,7 +1,7 @@
 package br.com.chucknorris.joke.presenter
 
 import br.com.chucknorris.base.mvp.BaseMvp
-import br.com.domain.joke.model.Joke
+import br.com.chucknorris.domain.joke.model.Joke
 
 class JokeContract {
 

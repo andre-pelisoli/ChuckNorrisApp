@@ -2,7 +2,7 @@ package br.com.chucknorris.joke.presenter
 
 import br.com.chucknorris.base.mvp.BasePresenter
 import br.com.chucknorris.base.rx.scheduler.ISchedulerProvider
-import br.com.domain.joke.usecase.GetJokeUseCase
+import br.com.chucknorris.domain.joke.usecase.GetJokeUseCase
 
 class JokePresenter(private val scheduler : ISchedulerProvider, private val loadJokeUseCase: GetJokeUseCase) : BasePresenter<JokeContract.View>(), JokeContract.Presenter {
 

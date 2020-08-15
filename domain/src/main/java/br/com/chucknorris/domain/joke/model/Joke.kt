@@ -1,4 +1,4 @@
-package br.com.domain.joke.model
+package br.com.chucknorris.domain.joke.model
 
 data class Joke (
     val id : String = "",

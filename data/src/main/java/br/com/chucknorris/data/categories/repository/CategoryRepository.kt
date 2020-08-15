@@ -1,8 +1,8 @@
-package br.com.data.categories.repository
+package br.com.chucknorris.data.categories.repository
 
-import br.com.data.categories.remote.ICategoryRemoteData
-import br.com.domain.category.ICategoryRepository
-import br.com.domain.category.model.Categories
+import br.com.chucknorris.data.categories.remote.ICategoryRemoteData
+import br.com.chucknorris.domain.category.ICategoryRepository
+import br.com.chucknorris.domain.category.model.Categories
 import io.reactivex.rxjava3.core.Single
 
 class CategoryRepository (private val remoteDate : ICategoryRemoteData) : ICategoryRepository {

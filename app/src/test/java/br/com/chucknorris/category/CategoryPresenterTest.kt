@@ -3,15 +3,13 @@ package br.com.chucknorris.category
 import br.com.chucknorris.base.rx.scheduler.AppSchedulerProvider
 import br.com.chucknorris.category.presenter.CategoryContract
 import br.com.chucknorris.category.presenter.CategoryPresenter
-import br.com.domain.category.model.Categories
+import br.com.chucknorris.domain.category.model.Categories
 import br.com.domain.category.usecase.GetCategoriesUseCase
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.RelaxedMockK
-import io.mockk.mockk
 import io.mockk.verify
 import io.reactivex.rxjava3.core.Single
-import io.reactivex.rxjava3.schedulers.Schedulers
 import io.reactivex.rxjava3.schedulers.TestScheduler
 import org.junit.After
 import org.junit.Before

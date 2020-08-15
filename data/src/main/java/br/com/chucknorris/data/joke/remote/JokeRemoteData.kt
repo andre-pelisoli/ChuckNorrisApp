@@ -1,7 +1,8 @@
 package br.com.data.joke.remote
 
-import br.com.data.joke.client.IJokeApiClient
-import br.com.domain.joke.model.Joke
+import br.com.chucknorris.data.joke.remote.IJokeRemoteData
+import br.com.chucknorris.data.joke.client.IJokeApiClient
+import br.com.chucknorris.domain.joke.model.Joke
 import io.reactivex.rxjava3.core.Single
 
 class JokeRemoteData(private val apiClient : IJokeApiClient) : IJokeRemoteData {

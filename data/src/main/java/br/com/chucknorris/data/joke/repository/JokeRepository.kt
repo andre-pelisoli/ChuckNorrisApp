@@ -1,8 +1,8 @@
-package br.com.data.joke.repository
+package br.com.chucknorris.data.joke.repository
 
-import br.com.data.joke.remote.IJokeRemoteData
-import br.com.domain.joke.IJokeRepository
-import br.com.domain.joke.model.Joke
+import br.com.chucknorris.data.joke.remote.IJokeRemoteData
+import br.com.chucknorris.domain.joke.IJokeRepository
+import br.com.chucknorris.domain.joke.model.Joke
 import io.reactivex.rxjava3.core.Single
 
 class JokeRepository (private val remoteDate : IJokeRemoteData) : IJokeRepository {

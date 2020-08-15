@@ -1,4 +1,4 @@
-package br.com.data
+package br.com.chucknorris.data
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

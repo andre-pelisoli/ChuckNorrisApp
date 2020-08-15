@@ -6,11 +6,11 @@ import br.com.chucknorris.category.adapter.CategoryAdapter
 import br.com.chucknorris.category.adapter.ICategoryListener
 import br.com.chucknorris.category.presenter.CategoryContract
 import br.com.chucknorris.category.presenter.CategoryPresenter
-import br.com.data.categories.client.ICategoryApiClient
+import br.com.chucknorris.data.categories.client.ICategoryApiClient
 import br.com.data.categories.remote.CategoryRemoteData
-import br.com.data.categories.remote.ICategoryRemoteData
-import br.com.data.categories.repository.CategoryRepository
-import br.com.domain.category.ICategoryRepository
+import br.com.chucknorris.data.categories.remote.ICategoryRemoteData
+import br.com.chucknorris.data.categories.repository.CategoryRepository
+import br.com.chucknorris.domain.category.ICategoryRepository
 import br.com.domain.category.usecase.GetCategoriesUseCase
 import dagger.Module
 import dagger.Provides

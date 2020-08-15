@@ -13,7 +13,7 @@ import br.com.chucknorris.databinding.JokeActivityBinding
 import br.com.chucknorris.joke.di.DaggerJokeActivityComponent
 import br.com.chucknorris.joke.presenter.JokeContract
 import br.com.chucknorris.network.di.DaggerApiServiceComponent
-import br.com.domain.joke.model.Joke
+import br.com.chucknorris.domain.joke.model.Joke
 import com.bumptech.glide.Glide
 import javax.inject.Inject
 

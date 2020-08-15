@@ -1,6 +1,6 @@
-package br.com.data.categories.remote
+package br.com.chucknorris.data.categories.remote
 
-import br.com.domain.category.model.Categories
+import br.com.chucknorris.domain.category.model.Categories
 import io.reactivex.rxjava3.core.Single
 
 interface ICategoryRemoteData {

@@ -1,6 +1,6 @@
-package br.com.data.joke.model
+package br.com.chucknorris.data.joke.model
 
-import br.com.domain.joke.model.Joke
+import br.com.chucknorris.domain.joke.model.Joke
 import com.squareup.moshi.Json
 
 class JokeApi (
