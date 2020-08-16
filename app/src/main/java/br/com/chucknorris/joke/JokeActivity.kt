@@ -7,7 +7,6 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NavUtils
 import br.com.chucknorris.R
-import br.com.chucknorris.base.rx.di.DaggerSchedulerProviderComponent
 import br.com.chucknorris.category.CategoryActivity.Companion.CATEGORY_NAME
 import br.com.chucknorris.databinding.JokeActivityBinding
 import br.com.chucknorris.joke.di.DaggerJokeActivityComponent
@@ -74,7 +73,6 @@ class JokeActivity : AppCompatActivity(), JokeContract.View {
     private fun injectDependencies() {
         val jokeComponent = DaggerJokeActivityComponent
             .builder()
-            .schedulerProviderComponent(DaggerSchedulerProviderComponent.builder().build())
             .apiServiceComponent(DaggerApiServiceComponent.builder().build())
             .build()
         jokeComponent.inject(this)

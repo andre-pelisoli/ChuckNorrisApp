@@ -1,27 +1,32 @@
 package br.com.chucknorris.category.presenter
 
+import android.util.Log
 import br.com.chucknorris.base.mvp.BasePresenter
-import br.com.chucknorris.base.rx.scheduler.ISchedulerProvider
+import br.com.chucknorris.domain.category.model.Categories
 import br.com.chucknorris.domain.category.usecase.GetCategoriesUseCase
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
-class CategoryPresenter(val scheduler: ISchedulerProvider, private val loadCategoriesUseCase : GetCategoriesUseCase) : BasePresenter<CategoryContract.View>(), CategoryContract.Presenter {
+class CategoryPresenter(private val loadCategoriesUseCase : GetCategoriesUseCase) : BasePresenter<CategoryContract.View>(), CategoryContract.Presenter {
 
     override fun loadCategories() {
-        view?.showLoading()
+        coroutineScope.launch(Dispatchers.Main) {
+            try {
+                val categories :  Categories
 
-        addSubscription(loadCategoriesUseCase
-            .getCategories()
-            .subscribeOn(scheduler.backgroundThread())
-            .observeOn(scheduler.mainThread())
-            .subscribe (
-                { categories ->
-                    view?.disableLoading()
-                    view?.showCategories(categories)
-                },
-                { t: Throwable? ->
-                    view?.disableLoading()
-                    view?.showError()
+                view?.showLoading()
+
+                withContext(Dispatchers.IO) {
+                    categories = loadCategoriesUseCase.getCategories()
                 }
-            ))
+
+                view?.disableLoading()
+                view?.showCategories(categories)
+            } catch (exception : Exception) {
+                view?.disableLoading()
+                view?.showError()
+            }
+        }
     }
 }

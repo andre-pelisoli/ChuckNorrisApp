@@ -6,7 +6,7 @@ import io.reactivex.rxjava3.core.Single
 
 class GetCategoriesUseCase (private val repository: ICategoryRepository) {
 
-    fun getCategories () : Single<Categories> {
+    suspend fun getCategories () : Categories {
         return repository.getCategories()
     }
 }

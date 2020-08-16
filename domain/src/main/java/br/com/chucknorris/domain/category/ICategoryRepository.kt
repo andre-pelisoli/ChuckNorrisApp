@@ -5,6 +5,6 @@ import io.reactivex.rxjava3.core.Single
 
 interface ICategoryRepository {
 
-    fun getCategories() : Single<Categories>
+    suspend fun getCategories() : Categories
 
 }

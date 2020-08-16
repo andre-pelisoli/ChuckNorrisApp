@@ -1,6 +1,5 @@
 package br.com.chucknorris.joke.di
 
-import br.com.chucknorris.base.rx.scheduler.ISchedulerProvider
 import br.com.chucknorris.joke.presenter.JokeContract
 import br.com.chucknorris.joke.presenter.JokePresenter
 import br.com.chucknorris.data.joke.client.IJokeApiClient
@@ -18,10 +17,9 @@ class JokeModule {
 
     @Provides
     fun providesJokePresenter(
-        schedulerProvider: ISchedulerProvider,
         jokeUseCase: GetJokeUseCase
     ) : JokeContract.Presenter {
-        return JokePresenter(schedulerProvider, jokeUseCase)
+        return JokePresenter(jokeUseCase)
     }
 
     @Provides

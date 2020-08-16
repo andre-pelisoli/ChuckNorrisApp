@@ -1,28 +1,33 @@
 package br.com.chucknorris.joke.presenter
 
 import br.com.chucknorris.base.mvp.BasePresenter
-import br.com.chucknorris.base.rx.scheduler.ISchedulerProvider
+import br.com.chucknorris.domain.joke.model.Joke
 import br.com.chucknorris.domain.joke.usecase.GetJokeUseCase
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.lang.Exception
 
-class JokePresenter(private val scheduler : ISchedulerProvider, private val loadJokeUseCase: GetJokeUseCase) : BasePresenter<JokeContract.View>(), JokeContract.Presenter {
+class JokePresenter(private val loadJokeUseCase: GetJokeUseCase) : BasePresenter<JokeContract.View>(), JokeContract.Presenter {
 
     override fun loadJoke(categoryName : String) {
-        view?.showLoading()
+        coroutineScope.launch (Dispatchers.Main) {
+            try {
+                val joke : Joke
 
-        addSubscription(loadJokeUseCase
-            .getJoke(categoryName)
-            .subscribeOn(scheduler.backgroundThread())
-            .observeOn(scheduler.mainThread())
-            .subscribe (
-                { joke ->
-                    view?.disableLoading()
-                    view?.showJoke(joke)
-                },
-                { t: Throwable? ->
-                    view?.disableLoading()
-                    view?.showError()
+                view?.showLoading()
+
+                withContext(Dispatchers.IO) {
+                    joke = loadJokeUseCase.getJoke(categoryName)
                 }
-            ))
 
+                view?.disableLoading()
+                view?.showJoke(joke)
+
+            } catch (exception : Exception) {
+                view?.disableLoading()
+                view?.showError()
+            }
+        }
     }
 }

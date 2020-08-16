@@ -1,7 +1,6 @@
 package br.com.chucknorris.category.di
 
 import br.com.chucknorris.base.di.ActivityScope
-import br.com.chucknorris.base.rx.scheduler.ISchedulerProvider
 import br.com.chucknorris.category.adapter.CategoryAdapter
 import br.com.chucknorris.category.adapter.ICategoryListener
 import br.com.chucknorris.category.presenter.CategoryContract
@@ -24,8 +23,8 @@ class CategoryModule(listener: ICategoryListener) {
 
     @Provides
     @ActivityScope
-    fun providesCategoryPresenter(schedulerProvider: ISchedulerProvider, categoryUseCase: GetCategoriesUseCase) : CategoryContract.Presenter {
-        return CategoryPresenter(schedulerProvider, categoryUseCase)
+    fun providesCategoryPresenter(categoryUseCase: GetCategoriesUseCase) : CategoryContract.Presenter {
+        return CategoryPresenter(categoryUseCase)
     }
 
     @Provides

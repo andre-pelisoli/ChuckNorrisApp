@@ -1,25 +1,25 @@
 package br.com.chucknorris.base.mvp
 
-import io.reactivex.rxjava3.disposables.CompositeDisposable
-import io.reactivex.rxjava3.disposables.Disposable
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 
 
 open class BasePresenter<T> : BaseMvp.MvpPresenter<T> {
     var view: T? = null
 
-    private val compositeDisposable: CompositeDisposable = CompositeDisposable()
+    private val job = Job()
+
+    val coroutineScope = CoroutineScope(job + Dispatchers.Main)
+
 
     override fun attachView(mvpView: T?) {
         view = mvpView
     }
 
     override fun detachView() {
-        compositeDisposable.clear()
+        job.cancel()
         attachView(null)
-    }
-
-    fun addSubscription(subscription: Disposable?) {
-        compositeDisposable.add(subscription)
     }
 
 }

@@ -6,7 +6,6 @@ import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
@@ -15,11 +14,10 @@ class ApiServiceModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(jsonConverterFactory: MoshiConverterFactory, rxAdapterFactory: RxJava3CallAdapterFactory, httpClient : OkHttpClient) : Retrofit {
+    fun provideRetrofit(jsonConverterFactory: MoshiConverterFactory, httpClient : OkHttpClient) : Retrofit {
         return Retrofit.Builder()
             .baseUrl(baseUrl)
             .addConverterFactory(jsonConverterFactory)
-            .addCallAdapterFactory(rxAdapterFactory)
             .client(httpClient)
             .build()
     }
@@ -30,10 +28,6 @@ class ApiServiceModule {
         Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
         .build())
-
-    @Provides
-    @Singleton
-    fun provideRxAdapter() : RxJava3CallAdapterFactory = RxJava3CallAdapterFactory.create()
 
     @Provides
     @Singleton

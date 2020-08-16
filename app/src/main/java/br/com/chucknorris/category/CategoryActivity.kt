@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.chucknorris.R
-import br.com.chucknorris.base.rx.di.DaggerSchedulerProviderComponent
 import br.com.chucknorris.category.adapter.CategoryAdapter
 import br.com.chucknorris.category.adapter.ICategoryListener
 import br.com.chucknorris.category.di.CategoryModule
@@ -60,7 +59,6 @@ class CategoryActivity : AppCompatActivity(), CategoryContract.View, ICategoryLi
     private fun injectDependencies() {
         val categoryComponent = DaggerCategoryActivityComponent
             .builder()
-            .schedulerProviderComponent(DaggerSchedulerProviderComponent.builder().build())
             .apiServiceComponent(DaggerApiServiceComponent.builder().build())
             .categoryModule(CategoryModule(this))
             .build()

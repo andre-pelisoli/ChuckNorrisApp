@@ -8,6 +8,6 @@ import retrofit2.http.Query
 interface IJokeApiClient {
 
     @GET("/jokes/random?")
-    fun getJoke(@Query("category") category : String) : Single<JokeApi>
+    suspend fun getJoke(@Query("category") category : String) : JokeApi
 
 }
